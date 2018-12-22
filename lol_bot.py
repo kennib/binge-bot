@@ -13,7 +13,6 @@ def lol_bot():
     # This bot lols at every command it gets sent!
     return f'lol {text}'
 
-
-
-# Start the web server!
-app.run()
+if __name__ == '__main__':
+    # Start the web server!
+    app.run()
