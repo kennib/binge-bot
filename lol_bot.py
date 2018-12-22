@@ -1,5 +1,5 @@
 # Import flask with the request object
-from flask import Flask, request
+from flask import Flask, request, jsonify
 
 # Create the web server
 app = Flask(__name__)
@@ -11,7 +11,10 @@ def lol_bot():
     # request.args is a dictionary (cool!)
     text = request.form.get('text')
     # This bot lols at every command it gets sent!
-    return f'lol {text}'
+    return jsonify({
+        'response_type': 'in_channel',
+        'text': f'lol {text}',
+    })
 
 if __name__ == '__main__':
     # Start the web server!
